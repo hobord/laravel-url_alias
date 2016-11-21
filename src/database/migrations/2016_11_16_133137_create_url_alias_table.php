@@ -23,7 +23,7 @@ class CreateUrlAliasTable extends Migration
             $table->timestamps();
         });
 
-        Schema::create('url_aliases', function (Blueprint $table) {
+        Schema::table('url_aliases', function (Blueprint $table) {
             $table->index('target');
         });
 
@@ -36,6 +36,6 @@ class CreateUrlAliasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('url_aliases');
+        Schema::drop('url_aliases');
     }
 }
